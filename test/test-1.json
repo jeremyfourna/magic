@@ -1,0 +1,33 @@
+{
+  "entities": [{
+    "name": "tenants",
+    "relationships": [{
+      "type": "optional/many",
+      "entity": "tenants"
+    }]
+  }, {
+    "name": "products",
+    "relationships": [{
+      "type": "mandatory/one",
+      "entity": "tenants"
+    },{
+      "type": "optional/many",
+      "entity": "catalogs"
+    }]
+  }, {
+    "name": "users",
+    "relationships": [{
+      "type": "mandatory/one",
+      "entity": "tenants"
+    }]
+  },{
+    "name": "catalogs",
+    "relationships": [{
+      "type": "mandatory/one",
+      "entity": "tenants"
+    },{
+      "type": "optional/many",
+      "entity": "products"
+    }]
+  }]
+}
